@@ -1,11 +1,11 @@
 import React from "react";
-import Logo from "../assets/navbar/logo_opinia.png";
-import Home from "../assets/navbar/home.png";
-import People from "../assets/navbar/people.png";
-import Chat from "../assets/navbar/chat.png";
-import Lonceng from "../assets/navbar/lonceng.png";
-import Avatar from "../assets/navbar/avatar.png";
-import Search from "../assets/navbar/search.png";
+import Logo from "../public/images/navbar/logo_opinia.png";
+import Home from "../public/images/navbar/home.png";
+import People from "../public/images/navbar/people.png";
+import Chat from "../public/images/navbar/chat.png";
+import Lonceng from "../public/images/navbar/lonceng.png";
+import Avatar from "../public/images/navbar/avatar.png";
+import Search from "../public/images/navbar/search.png";
 
 export default function Nav() {
   return (

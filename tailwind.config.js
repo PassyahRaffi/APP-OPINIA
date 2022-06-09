@@ -1,5 +1,8 @@
 module.exports = {
-  content: ["./src/**/*.{html,js,jsx}"],
+  content: [
+    "./src/**/*.{html,js,jsx}",
+    "node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}",
+  ],
   theme: {
     fontFamily: {
       sans: ["Roboto", "Arial"],
@@ -19,13 +22,14 @@ module.exports = {
     },
     extend: {
       colors: {
-        "background": "#FAFAFB",
-        "white": "#FFFFFF",
+        background: "#FAFAFB",
+        white: "#FFFFFF",
         "search-icon": "#F5FBFF",
         "nav-icon": "#F2F3F3",
         "green-primary": "#05B1A1",
         "green-second": "#797979",
         "green-send": "#46B29C",
+        "green-click": "rgba(5, 104, 142, 0.1)",
         "blue-primary": "#05678E",
         "orange-primary": "#EA6C00",
         "gray-nav": "#B1B1B1",
@@ -34,14 +38,17 @@ module.exports = {
         "gray-border": "#EFEFEF",
         "gray-placeholder": "#D6D6D6",
         "gray-post": "#797979",
-        "comment": "#D6D6D6",
+        "gray-opacity1": "rgba(0, 0, 0, 0.45)",
+        "gray-opacity2": "rgba(18, 18, 18, 0.45)",
+        comment: "#D6D6D6",
       },
       dropShadow: {
-        "nav": "0px 4px 4px rgba(97, 198, 230, 0.1)",
-        "sampul": "0px 2px 4px rgba(0, 0, 0, 0.1)",
-        "content": "0px 2px 4px 2px rgba(0, 0, 0, 0.1)",
-      }
+        nav: "0px 4px 4px rgba(97, 198, 230, 0.1)",
+        sampul: "0px 2px 4px rgba(0, 0, 0, 0.1)",
+        content: "0px 2px 4px 2px rgba(0, 0, 0, 0.1)",
+        createPost: "0px 2px 4px 2px rgba(97, 97, 97, 0.1)",
+      },
     },
   },
-  plugins: [require("@tailwindcss/line-clamp")],
+  plugins: [require("@tailwindcss/line-clamp"), require("flowbite/plugin")],
 };
