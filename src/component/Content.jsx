@@ -130,15 +130,15 @@ export default function Content() {
   // CATEGORI POLING
   const [catPoling, setPoling] = useState([
     {
-      img: Ppilihanku,
+      img: Cpilihanku,
       title: "Pilihanku",
     },
     {
-      img: Pkatakunci,
+      img: CkataKunci,
       title: "Kata Kunci",
     },
     {
-      img: Ppsikografik,
+      img: Cpsikografik,
       title: "Psikografik",
     },
     {
@@ -168,7 +168,7 @@ export default function Content() {
             title: "Artikel",
           },
           {
-            img: Dpoling,
+            img: Cpoling,
             title: "Poling",
           },
           {
@@ -502,7 +502,7 @@ export default function Content() {
                       cat === "Semua" ? "bg-green-click" : "bg-grey-100"
                     } cursor-pointer flex items-center w-[399px] h-[60px] rounded-[5px]`}
                     onClick={() => {
-                      setAllCat();
+                      setAllCat("Semua");
                     }}
                   >
                     <div className="flex mx-2 mx-2 items-center justify-center rounded-[5px] gap-20 w-[40px] h-[40px] bg-green-primary">
