@@ -502,7 +502,7 @@ export default function Content() {
                       cat === "Semua" ? "bg-green-click" : "bg-grey-100"
                     } cursor-pointer flex items-center w-[399px] h-[60px] rounded-[5px]`}
                     onClick={() => {
-                      setAllCat("Semua");
+                      allCat("Semua");
                     }}
                   >
                     <div className="flex mx-2 mx-2 items-center justify-center rounded-[5px] gap-20 w-[40px] h-[40px] bg-green-primary">
