@@ -51,12 +51,27 @@ import Cidea from "../public/images/4_create_postingan/0_idea.png";
 import Cartikel from "../public/images/4_create_postingan/0_artikel.png";
 import Cpoling from "../public/images/4_create_postingan/0_poling.png";
 import Cpetisi from "../public/images/4_create_postingan/0_petisi.png";
-// import { useTransition, animated } from "react-spring";
-// import { easeQuadIn, easeQuadOut } from "d3-ease";
-// import { createPopper } from "@popperjs/core";
+
+// CREATE ARTIKEL
+import Cartikels from "../public/images/2_artikel/0_vector_left.png"
+import Copini from "../public/images/2_artikel/1_opini.png"
+import Cesai from "../public/images/2_artikel/2_esai.png"
+import Cresensi from "../public/images/2_artikel/3_resensi.png"
+import Ccerpen from "../public/images/2_artikel/4_cerpen.png"
+import Ccerbung from "../public/images/2_artikel/5_cerbung.png"
+import Cpuisi from "../public/images/2_artikel/6_puisi.png"
+import Chumor from "../public/images/2_artikel/7_humor.png"
+
+// CREATE POLING
+import Cpolings from "../public/images/1_polling/0_vector_left.png"
+import Cpilihanku from "../public/images/1_polling/1_pilihanku.png"
+import CkataKunci from "../public/images/1_polling/2_katakunci.png"
+import Cpsikografik from "../public/images/1_polling/3_psikografik.png"
+import Ckuesioner from "../public/images/1_polling/4_kuesioner.png"
+
 
 export default function Content() {
-  // CATEGORI DEFAULT SEMUA
+  // CATEGORI DEFAULT SEMUA.....................................
   const [cat, setCat] = useState("Semua");
   const [allCat, setAllCat] = useState([
     {
@@ -64,11 +79,11 @@ export default function Content() {
       title: "Idea",
     },
     {
-      img: Dartikel,
+      img: Cartikel,
       title: "Artikel",
     },
     {
-      img: Dpoling,
+      img: Cpoling,
       title: "Poling",
     },
     {
@@ -87,33 +102,33 @@ export default function Content() {
       title: "Opini",
     },
     {
-      img: Aesai,
+      img: Cesai,
       title: "Esai",
     },
     {
-      img: Aresensi,
+      img: Cresensi,
       title: "Resensi",
     },
     {
-      img: Acerpen,
+      img: Ccerpen,
       title: "Cerpen",
     },
     {
-      img: Acerbung,
+      img: Ccerbung,
       title: "Cerbung",
     },
     {
-      img: Apuisi,
+      img: Cpuisi,
       title: "Puisi",
     },
     {
-      img: Ahumor,
+      img: Chumor,
       title: "Humor",
     },
   ]);
 
   // CATEGORI POLING
-  const [catPoling, setCatPoling] = useState([
+  const [catPoling, setPoling] = useState([
     {
       img: Ppilihanku,
       title: "Pilihanku",
@@ -132,7 +147,41 @@ export default function Content() {
     },
   ]);
 
-  // CREATE POSTINGAN
+  // UPDATE CATEGORI
+  const updateCatPost = (title) => {
+    switch (title) {
+      case "Artikel":
+        setAllCat(catArtikel);
+        break;
+      case "Poling":
+        setAllCat(catPoling);
+        break;
+
+      default:
+        setAllCat([
+          {
+            img: Didea,
+            title: "Idea",
+          },
+          {
+            img: Cartikel,
+            title: "Artikel",
+          },
+          {
+            img: Dpoling,
+            title: "Poling",
+          },
+          {
+            img: Dpetisi,
+            title: "Petisi",
+          },
+        ]);
+        break;
+    }
+  };
+
+
+  // CREATE POSTINGAN...........................................
   const [create, setCreate] = useState(false);
   const [createPost, setCreatePost] = useState([
     {
@@ -152,6 +201,66 @@ export default function Content() {
       title: "Petisi",
     },
   ]);
+
+  // CREATE ARTIKEL
+  const [createArtikel, setCreateArtikel] = useState([
+    // {
+    //   img: Cartikels,
+    //   title: "Artikel",
+    // },
+    {
+      img: Copini,
+      title: "Opini",
+    },
+    {
+      img: Cesai,
+      title: "Esai",
+    },
+    {
+      img: Cresensi,
+      title: "Resensi",
+    },
+    {
+      img: Ccerpen,
+      title: "Cerpen",
+    },
+    {
+      img: Ccerbung,
+      title: "Cerbung",
+    },
+    {
+      img: Cpuisi,
+      title: "Puisi",
+    },
+    {
+      img: Chumor,
+      title: "Humor",
+    },
+  ])
+
+  // CREATE POLING
+  const [createPoling, setCreatePoling] = useState([
+    // {
+    //   img: Cpolings,
+    //   title: "Poling"
+    // },
+    {
+      img: Cpilihanku,
+      title: "Pilihanku"
+    },
+    {
+      img: CkataKunci,
+      title: "Kata Kunci"
+    },
+    {
+      img: Cpsikografik,
+      title: "Psikografik"
+    },
+    {
+      img: Ckuesioner,
+      title: "Kuesioner"
+    },
+  ])
 
   const Dropdown = () => {
     setDropDwon(!dropdownActive);
@@ -175,13 +284,14 @@ export default function Content() {
     ]);
   };
 
+  // UPDATE CREATE POSTINGAN
   const updateCreatePost = (title) => {
     switch (title) {
       case "Artikel":
-        setCreatePost(catArtikel);
+        setCreatePost(createArtikel);
         break;
       case "Poling":
-        setCreatePost(catPoling);
+        setCreatePost(createPoling);
         break;
 
       default:
@@ -206,6 +316,7 @@ export default function Content() {
         break;
     }
   };
+
   return (
     <>
       {/* DASAR */}
@@ -332,7 +443,7 @@ export default function Content() {
               </div>
 
               {/* ----------------- BUAT POSTINGAN -------------- */}
-              <div className="fixed z-10 top-[35.3rem] flex w-[249px] h-[407px] flex items-start">
+              <div className="fixed z-10 top-[34rem] flex w-[249px] h-[407px] flex items-start">
                 <div className="grid gap-[17px]">
                   {" "}
                   {/* top-[45.3rem] top-[35.3rem]..................*/}
@@ -352,7 +463,7 @@ export default function Content() {
                   <div
                     className={`${
                       dropdownActive ? `grid` : `hidden`
-                    } grid w-[151px] h-[314px] gap-[10px]`}
+                    } grid w-[181px] h-[314px] gap-[10px]`}
                   >
                     {createPost.map((props) => {
                       return (
@@ -360,10 +471,10 @@ export default function Content() {
                           <div
                             key={props.title}
                             className={`${
-                              cat === props.title
+                              create === props.title
                                 ? "bg-white drop-shadow-createPost"
                                 : "bg-white drop-shadow-createPost"
-                            } cursor-pointer flex w-[150px] h-[71px] bg-white flex items-center justify-start px-[16px] rounded-full gap-[10px] drop-shadow-createPost`}
+                            } cursor-pointer flex w-[181px] h-[71px] bg-white flex items-center justify-start px-[16px] rounded-full gap-[10px] drop-shadow-createPost`}
                             onClick={() => {
                               updateCreatePost(props.title);
                             }}
@@ -391,7 +502,7 @@ export default function Content() {
                       cat === "Semua" ? "bg-green-click" : "bg-grey-100"
                     } cursor-pointer flex items-center w-[399px] h-[60px] rounded-[5px]`}
                     onClick={() => {
-                      setCat("Semua");
+                      setAllCat();
                     }}
                   >
                     <div className="flex mx-2 mx-2 items-center justify-center rounded-[5px] gap-20 w-[40px] h-[40px] bg-green-primary">
@@ -400,8 +511,8 @@ export default function Content() {
                     <h3 className="text-gray-icon-card">Semua</h3>
                   </div>
 
-                  {(cat === "Semua" || cat === "Idea" || cat === "Petisi") &&
-                    allCat.map((props) => {
+                  {/* {(cat === "Semua" || cat === "Idea" || cat === "Petisi") && */}
+                    {allCat.map((props) => {
                       return (
                         <>
                           <div
@@ -412,7 +523,7 @@ export default function Content() {
                                 : "bg-grey-100"
                             } cursor-pointer flex items-center w-[399px] h-[60px] rounded-[5px]`}
                             onClick={() => {
-                              setCat(props.title);
+                              updateCatPost(props.title);
                             }}
                           >
                             <div className="flex mx-2 mx-2 items-center justify-center rounded-[5px] gap-20 w-[40px] h-[40px] bg-green-primary">
