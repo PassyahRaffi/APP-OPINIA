@@ -1732,6 +1732,18 @@ input:checked + .toggle-bg {
   width: 180px;
 }
 
+.w-\[300px\] {
+  width: 300px;
+}
+
+.w-\[400px\] {
+  width: 400px;
+}
+
+.w-\[380px\] {
+  width: 380px;
+}
+
 .max-w-sm {
   max-width: 24rem;
 }
@@ -1998,6 +2010,10 @@ input:checked + .toggle-bg {
   align-self: center;
 }
 
+.overflow-auto {
+  overflow: auto;
+}
+
 .overflow-hidden {
   overflow: hidden;
 }
@@ -2018,8 +2034,21 @@ input:checked + .toggle-bg {
   overflow-y: hidden;
 }
 
+.overflow-y-visible {
+  overflow-y: visible;
+}
+
 .overflow-x-scroll {
   overflow-x: scroll;
+}
+
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.overscroll-contain {
+  -ms-scroll-chaining: none;
+      overscroll-behavior: contain;
 }
 
 .scroll-smooth {

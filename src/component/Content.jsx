@@ -26,23 +26,12 @@ import User from "../public/images/card/user.png";
 // IMG CATEGORI DEFAULT SEMUA
 import Dsemua from "../public/images/4_sidebar_profil_post/default/0_semua.png";
 import Didea from "../public/images/4_sidebar_profil_post/default/0_idea.png";
-import Dartikel from "../public/images/4_sidebar_profil_post/default/1_artikel.png";
-import Dpoling from "../public/images/4_sidebar_profil_post/default/1_poling.png";
 import Dpetisi from "../public/images/4_sidebar_profil_post/default/0_petisi.png";
 
 // IMG CATEGORI ARTIKEL
 import Aopini from "../public/images/4_sidebar_profil_post/artikel/0_opini.png";
-import Aesai from "../public/images/4_sidebar_profil_post/artikel/1_esai.png";
-import Aresensi from "../public/images/4_sidebar_profil_post/artikel/1_resensi.png";
-import Acerpen from "../public/images/4_sidebar_profil_post/artikel/1_cerpen.png";
-import Acerbung from "../public/images/4_sidebar_profil_post/artikel/1_cerbung.png";
-import Apuisi from "../public/images/4_sidebar_profil_post/artikel/1_puisi.png";
-import Ahumor from "../public/images/4_sidebar_profil_post/artikel/1_humor.png";
 
 // IMG CATEGORI POLING
-import Ppilihanku from "../public/images/4_sidebar_profil_post/poling/1_pilihanku.png";
-import Pkatakunci from "../public/images/4_sidebar_profil_post/poling/1_kata_kunci.png";
-import Ppsikografik from "../public/images/4_sidebar_profil_post/poling/1_psikografik.png";
 import Pkuesioner from "../public/images/4_sidebar_profil_post/poling/0_kuesioner.png";
 
 // DEFAULT CREATE POSTINGAN
@@ -53,22 +42,21 @@ import Cpoling from "../public/images/4_create_postingan/0_poling.png";
 import Cpetisi from "../public/images/4_create_postingan/0_petisi.png";
 
 // CREATE ARTIKEL
-import Cartikels from "../public/images/2_artikel/0_vector_left.png"
-import Copini from "../public/images/2_artikel/1_opini.png"
-import Cesai from "../public/images/2_artikel/2_esai.png"
-import Cresensi from "../public/images/2_artikel/3_resensi.png"
-import Ccerpen from "../public/images/2_artikel/4_cerpen.png"
-import Ccerbung from "../public/images/2_artikel/5_cerbung.png"
-import Cpuisi from "../public/images/2_artikel/6_puisi.png"
-import Chumor from "../public/images/2_artikel/7_humor.png"
+import Cartikels from "../public/images/2_artikel/0_vector_left.png";
+import Copini from "../public/images/2_artikel/1_opini.png";
+import Cesai from "../public/images/2_artikel/2_esai.png";
+import Cresensi from "../public/images/2_artikel/3_resensi.png";
+import Ccerpen from "../public/images/2_artikel/4_cerpen.png";
+import Ccerbung from "../public/images/2_artikel/5_cerbung.png";
+import Cpuisi from "../public/images/2_artikel/6_puisi.png";
+import Chumor from "../public/images/2_artikel/7_humor.png";
 
 // CREATE POLING
-import Cpolings from "../public/images/1_polling/0_vector_left.png"
-import Cpilihanku from "../public/images/1_polling/1_pilihanku.png"
-import CkataKunci from "../public/images/1_polling/2_katakunci.png"
-import Cpsikografik from "../public/images/1_polling/3_psikografik.png"
-import Ckuesioner from "../public/images/1_polling/4_kuesioner.png"
-
+import Cpolings from "../public/images/1_polling/0_vector_left.png";
+import Cpilihanku from "../public/images/1_polling/1_pilihanku.png";
+import CkataKunci from "../public/images/1_polling/2_katakunci.png";
+import Cpsikografik from "../public/images/1_polling/3_psikografik.png";
+import Ckuesioner from "../public/images/1_polling/4_kuesioner.png";
 
 export default function Content() {
   // CATEGORI DEFAULT SEMUA.....................................
@@ -152,34 +140,46 @@ export default function Content() {
     switch (title) {
       case "Artikel":
         setAllCat(catArtikel);
+        setCat("Opini");
         break;
       case "Poling":
         setAllCat(catPoling);
+        setCat("Pilihanku")
         break;
-
+      case "Idea":
+        setCat(title)
+        break;
+      case "Petisi":
+        setCat(title)
+        break;
       default:
-        setAllCat([
-          {
-            img: Didea,
-            title: "Idea",
-          },
-          {
-            img: Cartikel,
-            title: "Artikel",
-          },
-          {
-            img: Cpoling,
-            title: "Poling",
-          },
-          {
-            img: Dpetisi,
-            title: "Petisi",
-          },
-        ]);
+        setCat(title)
         break;
     }
+    // setCat(title)
   };
 
+  const selectAllCat = (title) => {
+    setAllCat([
+      {
+        img: Didea,
+        title: "Idea",
+      },
+      {
+        img: Cartikel,
+        title: "Artikel",
+      },
+      {
+        img: Cpoling,
+        title: "Poling",
+      },
+      {
+        img: Dpetisi,
+        title: "Petisi",
+      },
+    ]);
+    setCat(title);
+  };
 
   // CREATE POSTINGAN...........................................
   const [create, setCreate] = useState(false);
@@ -236,7 +236,7 @@ export default function Content() {
       img: Chumor,
       title: "Humor",
     },
-  ])
+  ]);
 
   // CREATE POLING
   const [createPoling, setCreatePoling] = useState([
@@ -246,21 +246,21 @@ export default function Content() {
     // },
     {
       img: Cpilihanku,
-      title: "Pilihanku"
+      title: "Pilihanku",
     },
     {
       img: CkataKunci,
-      title: "Kata Kunci"
+      title: "Kata Kunci",
     },
     {
       img: Cpsikografik,
-      title: "Psikografik"
+      title: "Psikografik",
     },
     {
       img: Ckuesioner,
-      title: "Kuesioner"
+      title: "Kuesioner",
     },
-  ])
+  ]);
 
   const Dropdown = () => {
     setDropDwon(!dropdownActive);
@@ -463,7 +463,7 @@ export default function Content() {
                   <div
                     className={`${
                       dropdownActive ? `grid` : `hidden`
-                    } grid w-[181px] h-[314px] gap-[10px]`}
+                    } overflow-y-auto grid w-content h-[314px] gap-[10px]`}
                   >
                     {createPost.map((props) => {
                       return (
@@ -495,14 +495,15 @@ export default function Content() {
 
               {/* ................................PENDING .................................... */}
               <div className="flex justify-center items-center bg-white drop-shadow-sampul rounded-[5px] w-[459px] h-[340px]">
-                <div className="grid w-[399px] h-[300px]">
+                <div className="overflow-y-auto grid w-content h-[300px]">
                   {/* CATEGORI DEFAULT SEMUA */}
+
                   <div
                     className={`${
                       cat === "Semua" ? "bg-green-click" : "bg-grey-100"
                     } cursor-pointer flex items-center w-[399px] h-[60px] rounded-[5px]`}
                     onClick={() => {
-                      allCat("Semua");
+                      selectAllCat("Semua");
                     }}
                   >
                     <div className="flex mx-2 mx-2 items-center justify-center rounded-[5px] gap-20 w-[40px] h-[40px] bg-green-primary">
@@ -512,82 +513,28 @@ export default function Content() {
                   </div>
 
                   {/* {(cat === "Semua" || cat === "Idea" || cat === "Petisi") && */}
-                    {allCat.map((props) => {
-                      return (
-                        <>
-                          <div
-                            key={props.title}
-                            className={`${
-                              cat === props.title
-                                ? "bg-green-click"
-                                : "bg-grey-100"
-                            } cursor-pointer flex items-center w-[399px] h-[60px] rounded-[5px]`}
-                            onClick={() => {
-                              updateCatPost(props.title);
-                            }}
-                          >
-                            <div className="flex mx-2 mx-2 items-center justify-center rounded-[5px] gap-20 w-[40px] h-[40px] bg-green-primary">
-                              <img className="" src={props.img} alt="" />
-                            </div>
-                            <h3 className="text-gray-icon-card">
-                              {props.title}
-                            </h3>
+                  {allCat.map((props) => {
+                    return (
+                      <>
+                        <div
+                          key={props.title}
+                          className={`${
+                            cat === props.title
+                              ? "bg-green-click"
+                              : "bg-grey-100"
+                          } cursor-pointer flex items-center w-[399px] h-[60px] rounded-[5px]`}
+                          onClick={() => {
+                            updateCatPost(props.title);
+                          }}
+                        >
+                          <div className="flex mx-2 mx-2 items-center justify-center rounded-[5px] gap-20 w-[40px] h-[40px] bg-green-primary">
+                            <img className="" src={props.img} alt="" />
                           </div>
-                        </>
-                      );
-                    })}
-
-                  {cat === "Artikel" &&
-                    catArtikel.map((props) => {
-                      return (
-                        <>
-                          <div
-                            key={props.title}
-                            className={`${
-                              cat === props.title
-                                ? "bg-green-click"
-                                : "bg-grey-100"
-                            } cursor-pointer flex items-center w-[399px] h-[60px] rounded-[5px]`}
-                            onClick={() => {
-                              setCat(props.title);
-                            }}
-                          >
-                            <div className="flex mx-2 mx-2 items-center justify-center rounded-[5px] gap-20 w-[40px] h-[40px] bg-green-primary">
-                              <img className="" src={props.img} alt="" />
-                            </div>
-                            <h3 className="text-gray-icon-card">
-                              {props.title}
-                            </h3>
-                          </div>
-                        </>
-                      );
-                    })}
-
-                  {cat === "Poling" &&
-                    catPoling.map((props) => {
-                      return (
-                        <>
-                          <div
-                            key={props.title}
-                            className={`${
-                              cat === props.title
-                                ? "bg-green-click"
-                                : "bg-grey-100"
-                            } cursor-pointer flex items-center w-[399px] h-[60px] rounded-[5px]`}
-                            onClick={() => {
-                              setCat(props.title);
-                            }}
-                          >
-                            <div className="flex mx-2 mx-2 items-center justify-center rounded-[5px] gap-20 w-[40px] h-[40px] bg-green-primary">
-                              <img className="" src={props.img} alt="" />
-                            </div>
-                            <h3 className="text-gray-icon-card">
-                              {props.title}
-                            </h3>
-                          </div>
-                        </>
-                      );
-                    })}
+                          <h3 className="text-gray-icon-card">{props.title}</h3>
+                        </div>
+                      </>
+                    );
+                  })}
                 </div>
               </div>
             </div>
